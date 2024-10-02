@@ -163,7 +163,7 @@
   "Normalizes hiccup by removing nil children, flattening children, parsing out id
   and classes from the selector. Optionally elides empty attribute maps when
   `:strip-empty-attrs?` is `true`."
-  [hiccup & [{:keys [strip-empty-attrs?] :as opt}]]
+  [hiccup & {:keys [strip-empty-attrs?] :as opt}]
   (if (hiccup? hiccup)
     (let [headers (get-hiccup-headers hiccup)
           attrs (normalize-attrs headers)]
